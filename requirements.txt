@@ -1,0 +1,14 @@
+google-generativeai
+google-ai-generativelanguage
+Pillow
+numpy
+SpeechRecognition
+edge-tts
+pygame
+python-dotenv
+pyaudio==0.2.13
+pydub
+opencv-python
+deep-translator
+gradio
+
