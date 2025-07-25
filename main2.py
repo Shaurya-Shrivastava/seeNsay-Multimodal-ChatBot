@@ -13,6 +13,7 @@ import pygame
 import threading
 from deep_translator import GoogleTranslator
 import cv2
+import argparse
 # Load environment variables from .env file
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
@@ -296,4 +297,10 @@ body { background-color: #0a0a0a; color: #e0e0e0; font-family: 'Segoe UI', sans-
         sensitivity_slider.change(update_sensitivity, inputs=[sensitivity_slider], outputs=[status_output])
 
     gr.Markdown("## With ❤️ by Innov8Hers", elem_id="subtitle")
-demo.launch(share=True)
+#demo.launch(share=True)
+parser = argparse.ArgumentParser()
+parser.add_argument("--server-name", default="0.0.0.0")
+parser.add_argument("--server-port", default=int(os.environ.get("PORT", 7860)), type=int)
+args = parser.parse_args()
+
+demo.launch(server_name=args.server_name, server_port=args.server_port)
